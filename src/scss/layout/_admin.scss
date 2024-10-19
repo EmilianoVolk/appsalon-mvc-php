@@ -1,0 +1,46 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.citas{
+    list-style: none;
+    padding: 0;
+    li{
+        padding: 1rem;
+        border-top: solid 1px v.$gris;
+        p{
+            font-weight: v.$bold;
+            color: v.$azul;
+        }
+        span{
+            font-weight: v.$regular;
+            color: v.$blanco;
+        }
+        .servicio{
+            font-weight: v.$regular;
+            color: v.$blanco;
+        }
+    }
+}
+
+.titulo-fecha{
+    margin: 5rem 0;
+}
+
+.servicios{
+    .acciones{
+        margin: 0 0 1rem;
+        a{
+            margin: 0;
+        }
+        .boton,
+        .boton-eliminar{
+            margin: 0;
+            width: auto;
+            display: inline-block;
+
+        }
+    }
+
+    @extend .citas
+
+}

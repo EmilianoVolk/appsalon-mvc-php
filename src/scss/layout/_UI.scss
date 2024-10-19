@@ -1,0 +1,70 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.contenedor-app{
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+    .imagen{
+        height: 100vh;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    .app{
+        width:  90%;
+        padding: v.$separacion 0;
+        margin: 0 auto;
+        max-height: 100vh;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 20px;
+            /* Ancho de la barra de desplazamiento */
+        }
+
+                &::-webkit-scrollbar {
+                    width: 8px;
+                    /* Ancho de la barra de desplazamiento */
+                }
+        
+                &::-webkit-scrollbar-track {
+                    background: #78787800;
+                    /* Color del fondo de la barra de scroll */
+                }
+        
+                &::-webkit-scrollbar-thumb {
+                    background-color: rgba(2, 2, 2, 0.995);
+                    /* Color de la barra de scroll */
+                    border-radius: 10px;
+                    /* Bordes redondeados */
+                    border: 3px solid #00000000;
+                    /* Espacio alrededor de la barra */
+                }
+        
+                &::-webkit-scrollbar-thumb:hover {
+                    background-color: #000000;
+                    /* Color al pasar el mouse por encima */
+                }
+        
+                // scrollbar-width: thin;
+
+
+    }
+}
+
+.barra{
+    margin: v.$separacion 0;
+
+    @include m.tablet {
+        display: flex;
+        justify-content:space-between;
+        align-items: center
+    }
+
+    .boton{
+        margin: 0 ;
+        @include m.boton(v.$negro, v.$blanco);
+    }
+}
